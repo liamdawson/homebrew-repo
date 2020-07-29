@@ -1,8 +1,8 @@
 class BuildkiteWaiter < Formula
   desc "Notify when a Buildkite build finishes"
   homepage "https://github.com/liamdawson/buildkite_waiter"
-  url "https://github.com/liamdawson/buildkite_waiter/archive/v0.1.1.tar.gz"
-  sha256 "51927f0d66aae0b4396cc5868d6980ff2f192b5a38738b18bf8bf5a82fd59088"
+  url "https://github.com/liamdawson/buildkite_waiter/archive/v0.2.0.tar.gz"
+  sha256 "d6fc24af864e88af1c6a9e439c8ad495ac7ac7d88fc67c2976d1f88538e4dc5b"
   license "Apache-2.0" # or MIT
 
   depends_on "rust" => :build

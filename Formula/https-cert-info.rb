@@ -5,6 +5,12 @@ class HttpsCertInfo < Formula
   sha256 "9a3c54cde53a8ebfebf77a31b6ff9b85fdfc9e4781547a1126da3c7efbbf933e"
   license "Apache-2.0" # or MIT
 
+  bottle do
+    root_url "https://dl.bintray.com/liamdawson/bottles-repo"
+    cellar :any_skip_relocation
+    sha256 "600bb7733130bb9c38df09c151255346754307f7b06b7634f8f9c1b84a8f9ba9" => :catalina
+  end
+
   depends_on "rust" => :build
 
   def install

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+  echo "usage: formula-name"
+  exit 1
+fi
+
+brew test-bot --root-url=https://dl.bintray.com/liamdawson/bottles-repo --bintray-org=liamdawson --tap=liamdawson/repo "liamdawson/repo/$1"

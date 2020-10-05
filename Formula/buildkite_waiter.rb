@@ -21,6 +21,10 @@ class BuildkiteWaiter < Formula
   end
 
   test do
-    system "#{bin}/program", "help"
+    stdout, stderr, status = Open3.capture3("#{bin}/buildkite_waiter by-url https://buildkite.com/my-great-org/my-pipeline/builds/1")
+
+    assert_equal false, status.success?
+    assert_equal "", stdout
+    assert_match "Unable to retrieve a saved API token", stderr
   end
 end

@@ -21,7 +21,9 @@ class BuildkiteWaiter < Formula
   end
 
   test do
-    stdout, stderr, status = Open3.capture3("#{bin}/buildkite_waiter by-url https://buildkite.com/my-great-org/my-pipeline/builds/1")
+    stdout, stderr, status = Open3.capture3(
+      "#{bin}/buildkite_waiter by-url https://buildkite.com/my-great-org/my-pipeline/builds/1",
+    )
 
     assert_equal false, status.success?
     assert_equal "", stdout

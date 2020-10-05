@@ -89,7 +89,6 @@ jobs:
           sudo rm -rf /usr/local/include/* /usr/local/lib/*
           brew update-reset
           brew cleanup
-          brew cask install xquartz
       - name: Set up tap
         run: |
           REPO=$(brew --repo ${{github.repository}})

@@ -14,6 +14,7 @@ class BuildkiteWaiter < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "dbus"
+  depends_on "openssl@1.1"
 
   def install
     cd "buildkite_waiter" do

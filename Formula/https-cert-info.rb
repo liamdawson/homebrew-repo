@@ -4,11 +4,11 @@ class HttpsCertInfo < Formula
   url "https://github.com/liamdawson/https-cert-info/archive/v0.1.0.tar.gz"
   sha256 "9a3c54cde53a8ebfebf77a31b6ff9b85fdfc9e4781547a1126da3c7efbbf933e"
   license "Apache-2.0" # or MIT
+  head "https://github.com/liamdawson/https-cert-info.git"
 
-  bottle do
-    root_url "https://dl.bintray.com/liamdawson/bottles-repo"
-    cellar :any_skip_relocation
-    sha256 "600bb7733130bb9c38df09c151255346754307f7b06b7634f8f9c1b84a8f9ba9" => :catalina
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on "rust" => :build

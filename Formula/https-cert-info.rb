@@ -3,6 +3,14 @@ class HttpsCertInfo < Formula
   homepage "https://github.com/liamdawson/https-cert-info"
   url "https://github.com/liamdawson/https-cert-info/archive/v0.1.0.tar.gz"
   sha256 "9a3c54cde53a8ebfebf77a31b6ff9b85fdfc9e4781547a1126da3c7efbbf933e"
+  bottle do
+    root_url "https://dl.bintray.com/liamdawson/bottles-repo"
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "39c3ffd4bc0ddfd2f17a20ec0fb1022474c7897bd8effe1c8df0fa409984618e" => :catalina
+    sha256 "222090b5dd5a1b69d77520206d283fbb5e8f1221c23bb5be03014a09e7113323" => :x86_64_linux
+  end
+
   license "Apache-2.0" # or MIT
   head "https://github.com/liamdawson/https-cert-info.git"
 

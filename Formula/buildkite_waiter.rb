@@ -11,6 +11,13 @@ class BuildkiteWaiter < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/liamdawson/homebrew-repo/releases/download/buildkite_waiter-0.2.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "98f4769cc57e3e2c28c5d2dffd6a2fc37f386a0e0129f7c45a0950d780a79335"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba4ecc3bc881843a2b8d8e47cb0d7f65716155b51da009863745569e0e87392b"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "dbus"

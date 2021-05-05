@@ -11,6 +11,13 @@ class HttpsCertInfo < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/liamdawson/homebrew-repo/releases/download/https-cert-info-0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "66a857cc3ddc93bef65372a994fa7ae0f93bd6e9baeb09d936fcf5c96b203e86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1031f5b287de5f44bf5ea314832056a2b07060463ef94f3722681d59580e997c"
+  end
+
   depends_on "rust" => :build
 
   def install

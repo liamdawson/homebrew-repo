@@ -16,8 +16,7 @@ class HttpsCertInfo < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    # Completion scripts and manpage are generated in the crate's build
-    # directory, which includes a fingerprint hash. Try to locate it first
+    # Completion scripts and manpage are generated in the crate's build directory, which includes a fingerprint hash.
     out_dir = Dir["target/release/build/https-cert-info-*/out"].first
     bash_completion.install "#{out_dir}/https-cert-info.bash"
     fish_completion.install "#{out_dir}/https-cert-info.fish"

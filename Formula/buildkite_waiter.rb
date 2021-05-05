@@ -11,12 +11,6 @@ class BuildkiteWaiter < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    root_url "https://dl.bintray.com/liamdawson/bottles-repo"
-    sha256 cellar: :any_skip_relocation, catalina:     "09c24fcf5c1df4433df64fc071af24f0a7111c5f86c6ef41b7b32ee18def0daa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c25b894613a517e5b76c691bb283075bd50fd937676f6af08819017d0ed33fc5"
-  end
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "dbus"

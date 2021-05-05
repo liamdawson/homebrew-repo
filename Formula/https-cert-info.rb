@@ -11,13 +11,6 @@ class HttpsCertInfo < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle do
-    root_url "https://dl.bintray.com/liamdawson/bottles-repo"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, catalina:     "39c3ffd4bc0ddfd2f17a20ec0fb1022474c7897bd8effe1c8df0fa409984618e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "222090b5dd5a1b69d77520206d283fbb5e8f1221c23bb5be03014a09e7113323"
-  end
-
   depends_on "rust" => :build
 
   def install

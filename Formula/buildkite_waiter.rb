@@ -1,7 +1,7 @@
 class BuildkiteWaiter < Formula
   desc "Notify when a Buildkite build finishes"
   homepage "https://github.com/liamdawson/buildkite_waiter"
-  url "https://github.com/liamdawson/buildkite_waiter/archive/v0.2.1.tar.gz"
+  url "https://github.com/liamdawson/buildkite_waiter/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "28fcc99b5f556dc0a46349ec7db291c855819d23bd398fbfe785a3cdb30fc022"
   license "Apache-2.0" # or MIT
   revision 1

@@ -1,7 +1,7 @@
 class HttpsCertInfo < Formula
   desc "View a summary of the HTTPS certificate for a server"
   homepage "https://github.com/liamdawson/https-cert-info"
-  url "https://github.com/liamdawson/https-cert-info/archive/v0.1.0.tar.gz"
+  url "https://github.com/liamdawson/https-cert-info/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "9a3c54cde53a8ebfebf77a31b6ff9b85fdfc9e4781547a1126da3c7efbbf933e"
   license "Apache-2.0"
   head "https://github.com/liamdawson/https-cert-info.git"

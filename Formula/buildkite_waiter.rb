@@ -12,9 +12,10 @@ class BuildkiteWaiter < Formula
   end
 
   bottle do
-    root_url "https://github.com/liamdawson/homebrew-repo/releases/download/buildkite_waiter-0.2.1_1"
-    sha256 cellar: :any_skip_relocation, catalina:     "17de14a4bc683bbd055623366c0f6b45ec5e072125d8120918ad2c382d3ed399"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "58a5548d4cf37fe08fc1a872153295ff6da035dea7b4347bcfc26f60aac79813"
+    root_url "https://github.com/liamdawson/homebrew-repo/releases/download/buildkite_waiter-0.3.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d4f2c53c4a69757a2458dc3117c11c54f9de1395159e525ae5e11052d93d6312"
+    sha256 cellar: :any_skip_relocation, ventura:      "8a2bf2c0a311a4ab88983029d3bc56d1bcb7ed175a9164605f7bc53e987a2292"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48c358467292969ac345ab49d3037c34d22df7c53d7925be7c0f11690039ef87"
   end
 
   depends_on "pkg-config" => :build

@@ -1,11 +1,10 @@
 class BuildkiteWaiter < Formula
   desc "Notify when a Buildkite build finishes"
   homepage "https://github.com/liamdawson/buildkite_waiter"
-  url "https://github.com/liamdawson/buildkite_waiter/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "28fcc99b5f556dc0a46349ec7db291c855819d23bd398fbfe785a3cdb30fc022"
+  url "https://github.com/liamdawson/buildkite_waiter/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "b4808bf8b9777f77e2b6fee93352461605dbcd59dc3e753fbd257c0c1eadc68c"
   license "Apache-2.0" # or MIT
-  revision 1
-  head "https://github.com/liamdawson/buildkite_waiter.git"
+  head "https://github.com/liamdawson/buildkite_waiter.git", branch: "main"
 
   livecheck do
     url :head
@@ -20,22 +19,18 @@ class BuildkiteWaiter < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "dbus"
   end
 
   def install
-    cd "buildkite_waiter" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args
 
-    # Completion scripts and manpage are generated in the crate's build directory, which includes a fingerprint hash.
-    out_dir = Dir["target/release/build/buildkite_waiter-*/out"].first
-    bash_completion.install "#{out_dir}/buildkite_waiter.bash"
-    fish_completion.install "#{out_dir}/buildkite_waiter.fish"
-    zsh_completion.install "#{out_dir}/_buildkite_waiter"
+    bash_completion.install "completions/buildkite_waiter.bash"
+    fish_completion.install "completions/buildkite_waiter.fish"
+    zsh_completion.install "completions/_buildkite_waiter"
   end
 
   test do
@@ -45,6 +40,6 @@ class BuildkiteWaiter < Formula
 
     assert_equal false, status.success?
     assert_equal "", stdout
-    assert_match "Unable to retrieve a saved API token", stderr
+    assert_match "failed to load access token", stderr
   end
 end
